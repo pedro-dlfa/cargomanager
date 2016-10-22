@@ -1,0 +1,24 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.suo
+/CargoDataGenerator/bin/Debug
+/CargoDataGenerator/obj
+/CargoyouApi/bin
+/CargoyouApi/obj/Debug
+/Model/obj/Debug
+/packages
+/Projects/Api/bin
+/Projects/Api/obj/Debug
+/Projects/Application/bin
+/Projects/Application/obj/Debug
+/Projects/Common
+/Projects/DataAccess/bin/Debug
+/Projects/DataAccess/obj/Debug
+/Projects/Domain/bin/Debug
+/Projects/Domain/obj/Debug
+/Projects/Utils/bin/Debug
+/Projects/Utils/obj/Debug
+/Tests/IntegrationTests/bin/Debug
+/Tests/IntegrationTests/obj/Debug
