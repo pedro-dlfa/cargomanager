@@ -149,6 +149,17 @@ namespace CargoManager.DataAccess.Repositories
                     );
             }
 
+            Func<SortDescriptor<Cargo>, IPromise<IList<ISort>>> sortSelector = null;
+            switch (parameters.SortBy)
+            {
+                case SortableFields.Departure:
+                    sortSelector = s => s.Ascending(c => c.Departure);
+                    break;
+                case SortableFields.Price:
+                    sortSelector = s => s.Descending(c => c.Price);
+                    break;
+            }
+
             ISearchResponse<Cargo> response = client.Search<Cargo>(
                 s => 
                     s.From(parameters.Offset.GetValueOrDefault())
@@ -158,6 +169,7 @@ namespace CargoManager.DataAccess.Repositories
                             b => b.Filter(filters.ToArray())
                             )
                         )
+                    .Sort(sortSelector)
                     );
 
             return response.Hits.Select(h => h.Source);

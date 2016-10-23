@@ -59,6 +59,7 @@
     <Compile Include="Entities\LocationArea.cs" />
     <Compile Include="Entities\Place.cs" />
     <Compile Include="Entities\SearchParameters.cs" />
+    <Compile Include="Entities\SortableFields.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

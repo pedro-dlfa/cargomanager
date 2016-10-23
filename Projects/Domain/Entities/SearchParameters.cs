@@ -13,5 +13,6 @@ namespace CargoManager.Domain.Entities
         public FromTo<DateTime?> Arrival { get; set; }
         public int? Limit { get; set; }
         public int? Offset { get; set; }
+        public SortableFields SortBy { get; set; }
     }
 }

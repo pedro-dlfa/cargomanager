@@ -13,5 +13,6 @@ namespace CargoManager.Application.DTOs
         public FromToDTO<DateTime?> Arrival { get; set; }
         public int? Limit { get; set; }
         public int? Offset { get; set; }
+        public SortableFieldsDTO SortBy { get; set; }
     }
 }

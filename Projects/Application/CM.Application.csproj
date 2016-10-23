@@ -63,6 +63,7 @@
     <Compile Include="DTOs\LocationAreaDTO.cs" />
     <Compile Include="DTOs\LocationDTO.cs" />
     <Compile Include="DTOs\PlaceDTO.cs" />
+    <Compile Include="DTOs\SortableFieldsDTO.cs" />
     <Compile Include="IOC\ApplicationModule.cs" />
     <Compile Include="Mappers\GetCargosOutputDtoMapper.cs" />
     <Compile Include="Mappers\GetCargosInputDtoMapper.cs" />
