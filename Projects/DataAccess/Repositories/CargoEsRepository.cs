@@ -132,7 +132,7 @@ namespace CargoManager.DataAccess.Repositories
                     new QueryContainerDescriptor<Cargo>()
                         .GeoDistance(
                             r => r.Field(f2 => f2.From.Location)
-                                  .Location(parameters.OriginArea.Location.Latitude, parameters.OriginArea.Location.Longitude)
+                                  .Location(parameters.OriginArea.Location.Lat, parameters.OriginArea.Location.Lon)
                                   .Distance(Distance.Kilometers(parameters.OriginArea.MaxDistance))
                             )
                     );
@@ -143,7 +143,7 @@ namespace CargoManager.DataAccess.Repositories
                     new QueryContainerDescriptor<Cargo>()
                         .GeoDistance(
                             r => r.Field(f2 => f2.From.Location)
-                                  .Location(parameters.DestinationArea.Location.Latitude, parameters.DestinationArea.Location.Longitude)
+                                  .Location(parameters.DestinationArea.Location.Lat, parameters.DestinationArea.Location.Lon)
                                   .Distance(Distance.Kilometers(parameters.DestinationArea.MaxDistance))
                         )
                     );

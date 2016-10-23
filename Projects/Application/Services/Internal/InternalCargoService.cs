@@ -10,6 +10,8 @@ namespace CargoManager.Application.Services
 {
     public class InternalCargoService : IInternalCargoService
     {
+        private const double KILOMETERS_SCALE_FACTOR = 0.001;
+
         private readonly ICargoEsRepository cargoRepository;
 
         public InternalCargoService(ICargoEsRepository cargoRepository)
@@ -31,8 +33,17 @@ namespace CargoManager.Application.Services
 
             IEnumerable<Cargo> cargos = cargoRepository.SearchCargos(parameters);
 
-            GeoCoordinate position = parameters.OriginArea.Location;
-            return cargos.Select(c => new Tuple<Cargo, double>(c, position.GetDistanceTo(c.From.Location))).ToList();
+            GeoCoordinate position = new GeoCoordinate(
+                parameters.OriginArea.Location.Lat,
+                parameters.OriginArea.Location.Lon);
+
+            return cargos
+                .Select(c => 
+                    new Tuple<Cargo, double>(c, KILOMETERS_SCALE_FACTOR * position.GetDistanceTo(
+                        new GeoCoordinate(
+                            c.From.Location.Lat, 
+                            c.From.Location.Lon))))
+                .ToList();
         }
     }
 }

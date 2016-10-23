@@ -1,11 +1,9 @@
-﻿
-using CargoManager.DataAccess.Configuration;
+﻿using CargoManager.DataAccess.Configuration;
 using CargoManager.DataAccess.Contracts.Repositories;
 using CargoManager.DataAccess.Repositories;
 using CargoManager.Domain.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Device.Location;
 
 namespace CargoManager.IntegrationTests.Repositories
 {
@@ -41,12 +39,12 @@ namespace CargoManager.IntegrationTests.Repositories
                 },
                 OriginArea = new LocationArea
                 {
-                    Location = new GeoCoordinate { Latitude = 1, Longitude = 2 },
+                    Location = new GeoLocation { Lat = 1, Lon = 2 },
                     MaxDistance = 100
                 },
                 DestinationArea = new LocationArea
                 {
-                    Location = new GeoCoordinate { Latitude = 3, Longitude = 4 },
+                    Location = new GeoLocation { Lat = 3, Lon = 4 },
                     MaxDistance = 200
                 },
                 Offset = 1,
@@ -74,7 +72,7 @@ namespace CargoManager.IntegrationTests.Repositories
                 },
                 OriginArea = new LocationArea
                 {
-                    Location = new GeoCoordinate { Latitude = 1, Longitude = 2 },
+                    Location = new GeoLocation { Lat = 1, Lon = 2 },
                     MaxDistance = 100
                 }
             };
@@ -100,7 +98,7 @@ namespace CargoManager.IntegrationTests.Repositories
                 },
                 OriginArea = new LocationArea
                 {
-                    Location = new GeoCoordinate { Latitude = 1, Longitude = 2 },
+                    Location = new GeoLocation { Lat = 1, Lon = 2 },
                     MaxDistance = 100
                 }
             };

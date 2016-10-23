@@ -2,7 +2,6 @@
 using CargoManager.Shared.Resources;
 using CargoManager.Shared.Utils;
 using System.Collections.Generic;
-using System.Device.Location;
 using System.Globalization;
 using System.Linq;
 
@@ -30,10 +29,11 @@ namespace CargoManager.Shared.DB
                     {
                         City = s[0],
                         Province = s[1],
-                        Location = new GeoCoordinate(
-                            latitude: double.Parse(s[3], CultureInfo.InvariantCulture),
-                            longitude: double.Parse(s[4], CultureInfo.InvariantCulture)
-                            )
+                        Location = new GeoLocation
+                        {
+                            Lat = double.Parse(s[3], CultureInfo.InvariantCulture),
+                            Lon = double.Parse(s[4], CultureInfo.InvariantCulture)
+                        }
                     }
                 )
                 .ToList();

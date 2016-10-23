@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using CargoManager.Application.DTOs;
 using CargoManager.Domain.Entities;
-using System.Device.Location;
 
 namespace CargoManager.Application.MappingProfiles
 {
@@ -19,9 +18,7 @@ namespace CargoManager.Application.MappingProfiles
             this.CreateMap<Place, PlaceDTO>()
                 .ForMember(dst => dst.Location, opt => opt.MapFrom(src => src.Location));
 
-            this.CreateMap<GeoCoordinate, LocationDTO>()
-                .ForMember(dst => dst.Lat, src => src.MapFrom(f => f.Latitude))
-                .ForMember(dst => dst.Lon, src => src.MapFrom(f => f.Longitude));
+            this.CreateMap<GeoLocation, LocationDTO>();
         }
     }
 }
