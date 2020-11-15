@@ -4,7 +4,7 @@ CargoManager!
 
 This is a prototype for a personal project started in 2016.
 
-The goal was to create a "sharing economy" like solution for truck transportation.
+The goal was to create a "sharing economy" like solution for ground trasport.
 Transport employees move cargos between cities. But once the cargo is delivered, many times they return without any other cargo (empty truck), with the associated cost and CO2 emissions.
 The idea was to create an application to publish "cargo" offers and allow transport employees to bid for the cargo. This way transport employees could yield a profit the way back.
 
